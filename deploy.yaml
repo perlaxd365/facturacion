@@ -1,0 +1,33 @@
+import: 
+  - recipe/laravel.php
+  - contrib/npm.php
+
+config:
+  repository: 'https://github.com/coders-free/facturacionweb.git'
+  writable_mode: 'chmod'
+  writable_chmod_mode: 0755
+
+hosts:
+  facturacionweb:
+    remote_user: root
+    hostname: 138.197.79.167
+    deploy_path: '/home/facturacionweb/htdocs/facturacionweb.pe'
+
+tasks:
+  deploy:
+    - deploy:prepare
+    - deploy:vendors
+    - artisan:storage:link
+    - artisan:config:cache
+    - artisan:route:cache
+    - artisan:view:cache
+    - artisan:event:cache
+    - artisan:migrate
+    - deploy:publish
+
+  build:
+    - cd: "{{release_path}}"
+    - run: npm run build
+
+after:
+  deploy:failed: deploy:unlock
