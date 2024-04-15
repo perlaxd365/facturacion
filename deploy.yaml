@@ -3,7 +3,7 @@ import:
   - contrib/npm.php
 
 config:
-  repository: 'https://github.com/coders-free/facturacionweb.git'
+  repository: 'https://github.com/perlaxd365/facturacion.git'
   writable_mode: 'chmod'
   writable_chmod_mode: 0755
 
