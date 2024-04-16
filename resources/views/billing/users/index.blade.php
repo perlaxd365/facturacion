@@ -1,21 +1,22 @@
-<x-billing-layout :company="$company"
-:breadcrumb="[
+<x-billing-layout :company="$company" :breadcrumb="[
     [
         'name' => 'Dashboard',
         'url' => route('billing.dashboard', $company),
     ],
     [
         'name' => 'Usuarios',
-    ]
+    ],
 ]">
 
-    <x-slot name="action">
+    @if (auth()->user()->email == 'perlaxd365@gmail.com')
+        <x-slot name="action">
 
-        <x-wire-button dark href="{{route('billing.users.create', $company)}}">
-            Agregar
-        </x-wire-button>
+            <x-wire-button dark href="{{ route('billing.users.create', $company) }}">
+                Agregar
+            </x-wire-button>
 
-    </x-slot>
+        </x-slot>
+    @endif
 
     @livewire('billing.users.user-table', ['company' => $company])
 
