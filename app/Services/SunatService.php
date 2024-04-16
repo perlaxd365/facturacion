@@ -60,7 +60,7 @@ class SunatService
             ->setNombreComercial($this->company->nombreComercial)
             ->setAddress(
                 (new Address())
-                    ->setUbigueo($this->company->address->district_id)
+                    ->setUbigueo(str_pad($this->company->address->district_id, 6, '0', STR_PAD_LEFT))
                     ->setDepartamento($this->company->address->department->name)
                     ->setProvincia($this->company->address->province->name)
                     ->setDistrito($this->company->address->district->name)
