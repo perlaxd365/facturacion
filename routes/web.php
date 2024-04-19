@@ -46,7 +46,7 @@ Route::middleware([
         return view('dashboard', compact('department'));
     })->name('dashboard'); */
 
-    Route::redirect('/dashboard', '/companies')->name('dashboard');;
+    Route::redirect('/dashboard', '/companies')->name('dashboard');
 
     Route::resource('companies', CompanyController::class);
 });
