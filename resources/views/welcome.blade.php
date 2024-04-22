@@ -1,6 +1,6 @@
 <x-home-layout>
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-  
+
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="home.css">
     <style>
@@ -197,7 +197,69 @@
             margin-left: -12px;
             color: #fff;
         }
+
+        body {
+            font: normal 10pt Helvetica, Arial;
+        }
+
+        #map {
+            height: 500px;
+            border: 0px;
+        }
     </style>
+    <!---------------- Java Scripts for Map  ----------------->
+    <script src="http://maps.google.com/maps/api/js?key=AIzaSyAYWHoI7YpznDze_nChj5PyRxEhh4fdI9Y&sensor=false"
+        type="text/javascript"></script>
+
+    <!------------- Java Scripts for Map  ------------------->
+    <script type="text/javascript">
+        //--------------------- Sample code written by vIr ------------
+        var icon = new google.maps.MarkerImage("http://maps.google.com/mapfiles/ms/micons/blue.png",
+            new google.maps.Size(32, 32), new google.maps.Point(0, 0),
+            new google.maps.Point(16, 32));
+        var center = null;
+        var map = null;
+        var currentPopup;
+        var bounds = new google.maps.LatLngBounds();
+
+        var marker = new google.maps.Marker({
+            position: myCenter,
+            icon: {
+                url: '/images/marker.png',
+                size: new google.maps.Size(70, 86), //marker image size
+                origin: new google.maps.Point(0, 0), // marker origin
+                anchor: new google.maps.Point(35,
+                    86
+                ) // X-axis value (35, half of marker width) and 86 is Y-axis value (height of the marker).
+            }
+        });
+
+        function initMap() {
+            const map = new google.maps.Map(document.getElementById("map"), {
+                zoom: 15,
+                center: {
+                    lat: -9.122424,
+                    lng: -78.522164
+                },
+            });
+            const image =
+                "https://ugc.production.linktr.ee/8K3ymg7XQf2DuKch4wyz_1U05wSVathZ2iBC5?io=true&size=avatar-v3_0";
+            const beachMarker = new google.maps.Marker({
+                zoom: 15,
+                position: {
+                    lat: -9.122424,
+                    lng: -78.522164
+                },
+                map,
+                icon: {
+                    image
+                },
+            });
+
+        }
+    </script>
+
+
     <body style="margin: 0px; padding: 0px;" class="col-md-12 bg-secondary">
         <span class="preheader"
             style="display: none !important; visibility: hidden; opacity: 0; color: #F8F8F8; height: 0; width: 0; font-size: 1px;">Вы
@@ -232,13 +294,12 @@
                                                 <tr>
                                                     <td>
                                                         <a href="javascrip:void()" target="_blank">
-                                                            <img
-                                                                src="https://facturito.ec/wp-content/uploads/2022/09/facturitoop4.png"
+                                                            <img src="https://facturito.ec/wp-content/uploads/2022/09/facturitoop4.png"
                                                                 width="150" border="0" alt=""
                                                                 style="display: block; width: 100%; max-width: 120px; padding-bottom: 100px">
-                                                                2024
-                                                            </a>
-                                                                
+                                                            2024
+                                                        </a>
+
                                                     </td>
                                                 </tr>
                                             </table>
@@ -256,27 +317,12 @@
                                                         style="padding-right: 0px; padding-bottom: 5px; padding-left: 0px;">
                                                         <div style="font-family: Helvetica, Arial, sans-serif; font-size: 50px; line-height: 60px; color: #ffffff;"
                                                             class="em-mob-font_size-45px em-font-Rubik-Black">
-                                                            {{date("Y")}}
-                                                            
+                                                            {{ date('Y') }}
+
                                                         </div>
                                                     </td>
                                                 </tr>
                                             </table>
-
-
-                                            <table cellpadding="0" cellspacing="0" border="0" em="atom"
-                                                width="80%">
-                                                <tr>
-                                                    <td style="padding-bottom: 10px;">
-
-                                                    </td>
-                                                </tr>
-                                            </table>
-
-
-
-
-
                                         </td>
                                     </tr>
                                 </table>
@@ -292,8 +338,8 @@
                                 </table>
                             </td>
                         </tr>
-                         {{-- FIN ESPACIO --}}
-                         <tr em="block" class="em-structure">
+                        {{-- FIN ESPACIO --}}
+                        <tr em="block" class="em-structure">
                             <td align="center" style="padding: 30px 40px 7px 39px; border-radius: 24px;"
                                 bgcolor="#FFFFFF"
                                 class="em-mob-padding_top-20 em-mob-padding_right-20 em-mob-padding_bottom-20 em-mob-padding_left-20">
@@ -306,17 +352,16 @@
                                                     <td
                                                         style="padding-right: 0px; padding-bottom: 10px; padding-left: 0px;">
                                                         <div class="d-flex justify-content-center">
-                                                            <img
-                                                                src="https://facturito.ec/wp-content/uploads/2022/10/facturitoop5.png"
+                                                            <img src="https://facturito.ec/wp-content/uploads/2022/10/facturitoop5.png"
                                                                 width="138" border="0" alt=""
                                                                 style="display: block; width: 100%; max-width: 138px;">
                                                         </div>
                                                         <div style="font-family: Helvetica, Arial, sans-serif; line-height: 32px; color: #333333; font-size: 20px;"
                                                             class="em-mob-font_size-20px em-mob-line_height-28px em-font-Rubik-Bold row">
-                                                            Servicios Disponibles 
-                                                            
+                                                            Servicios Disponibles
+
                                                         </div>
-                                                            <br>
+                                                        <br>
                                                     </td>
                                                 </tr>
                                             </table>
@@ -324,14 +369,15 @@
                                                 em="atom">
                                                 <tr>
                                                     <td style="padding-bottom: 10px;">
-                                                        
+
                                                         <div class="container-fluid">
                                                             <div class="container">
                                                                 <div class="row">
                                                                     <div class="col-sm-6">
                                                                         <div class="card text-center">
                                                                             <div class="title">
-                                                                                <i class="fa fa-file-text" aria-hidden="true"></i>
+                                                                                <i class="fa fa-file-text"
+                                                                                    aria-hidden="true"></i>
                                                                                 <h2>Facturación Electrónica Web</h2>
                                                                             </div>
                                                                             <div class="price">
@@ -339,55 +385,82 @@
                                                                             </div>
                                                                             <div class="option">
                                                                                 <ul>
-                                                                                    <li><i class="fa fa-check text-white" aria-hidden="true"></i> Facturas
+                                                                                    <li><i class="fa fa-check text-white"
+                                                                                            aria-hidden="true"></i>
+                                                                                        Facturas
                                                                                         ilimitadas</li>
-                                                                                    <li><i class="fa fa-check" aria-hidden="true"></i> Boletas ilimitadas
+                                                                                    <li><i class="fa fa-check"
+                                                                                            aria-hidden="true"></i>
+                                                                                        Boletas ilimitadas
                                                                                     </li>
-                                                                                    <li><i class="fa fa-check" aria-hidden="true"></i> Guía de remisión
+                                                                                    <li><i class="fa fa-check"
+                                                                                            aria-hidden="true"></i>
+                                                                                        Guía de remisión
                                                                                         ilimitadas</li>
-                                                                                    <li><i class="fa fa-check" aria-hidden="true"></i> Creación de
-                                                                                        certificado digital tributario.</li>
-                                                                                    <li><i class="fa fa-check" aria-hidden="true"></i> Creación de
-                                                                                        credenciales para guía de remision.</li>
+                                                                                    <li><i class="fa fa-check"
+                                                                                            aria-hidden="true"></i>
+                                                                                        Creación de
+                                                                                        certificado digital tributario.
+                                                                                    </li>
+                                                                                    <li><i class="fa fa-check"
+                                                                                            aria-hidden="true"></i>
+                                                                                        Creación de
+                                                                                        credenciales para guía de
+                                                                                        remision.</li>
                                                                                 </ul>
                                                                             </div>
-                                                                            <a href="#" data-toggle="modal" data-target="#exampleModal">Solicitar</a>
-                                    
+                                                                            <a href="#" data-toggle="modal"
+                                                                                data-target="#exampleModal">Solicitar</a>
+
                                                                         </div>
                                                                     </div>
                                                                     <div>
                                                                         <br>
-                                                                        
+
                                                                     </div>
                                                                     <div class="col-sm-6">
                                                                         <div class="card text-center">
                                                                             <div class="title">
-                                                                                <i class="fa fa-eye" aria-hidden="true"></i>
-                                                                                <h2>Sistema para Optica Web</h2>
+                                                                                <i class="fa fa-eye"
+                                                                                    aria-hidden="true"></i>
+                                                                                <h2>Sistema Web para Optica </h2>
                                                                             </div>
                                                                             <div class="price">
                                                                                 <h4><sup>S/</sup>89</h4>
                                                                             </div>
                                                                             <div class="option">
                                                                                 <ul>
-                                    
-                                                                                    <li><i class="fa fa-check" aria-hidden="true"></i> Control de Pacientes
+
+                                                                                    <li><i class="fa fa-check"
+                                                                                            aria-hidden="true"></i>
+                                                                                        Control de Pacientes
                                                                                     </li>
-                                                                                    <li><i class="fa fa-check" aria-hidden="true"></i> Control de Citas
+                                                                                    <li><i class="fa fa-check"
+                                                                                            aria-hidden="true"></i>
+                                                                                        Control de Citas
                                                                                         Electrónicas</li>
-                                                                                    <li><i class="fa fa-check" aria-hidden="true"></i> Recetas Electrónicas
+                                                                                    <li><i class="fa fa-check"
+                                                                                            aria-hidden="true"></i>
+                                                                                        Recetas Electrónicas
                                                                                     </li>
-                                                                                    <li><i class="fa fa-check" aria-hidden="true"></i> Control de ventas
+                                                                                    <li><i class="fa fa-check"
+                                                                                            aria-hidden="true"></i>
+                                                                                        Control de ventas
                                                                                     </li>
-                                    
-                                                                                    <li><i class="fa fa-check" aria-hidden="true"></i> Correo Corporativo
+
+                                                                                    <li><i class="fa fa-check"
+                                                                                            aria-hidden="true"></i>
+                                                                                        Correo Corporativo
                                                                                         para envíos
                                                                                     </li>
-                                                                                    <li><i class="fa fa-check" aria-hidden="true"></i> Reportes mensuales
+                                                                                    <li><i class="fa fa-check"
+                                                                                            aria-hidden="true"></i>
+                                                                                        Reportes mensuales
                                                                                     </li>
                                                                                 </ul>
                                                                             </div>
-                                                                            <a href="#" data-toggle="modal" data-target="#exampleModal">Solicitar</a>
+                                                                            <a href="#" data-toggle="modal"
+                                                                                data-target="#exampleModal">Solicitar</a>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -420,97 +493,10 @@
                                 </table>
                             </td>
                         </tr>
-                        
+
                         {{-- INICIO ESPACIO --}}
                         <tr em="block" class="em-structure">
                             <td align="center">
-                                <table cellpadding="0" cellspacing="0" border="0" width="100%" em="atom">
-                                    <tr>
-                                        <td height="20"></td>
-                                    </tr>
-                                </table>
-                            </td>
-                        </tr>
-                         {{-- FIN ESPACIO --}}
-                        <tr em="block" class="em-structure">
-                            <td align="center" style="padding: 30px 40px 7px 39px; border-radius: 24px;"
-                                bgcolor="#FFFFFF"
-                                class="em-mob-padding_top-20 em-mob-padding_right-20 em-mob-padding_bottom-20 em-mob-padding_left-20">
-                                <table border="0" cellspacing="0" cellpadding="0" class="em-mob-width-100perc">
-                                    <tr>
-                                        <td width="580" valign="top" class="em-mob-wrap em-mob-width-100perc">
-                                            <table cellpadding="0" cellspacing="0" border="0" width="100%"
-                                                em="atom">
-                                                <tr>
-                                                    <td
-                                                        style="padding-right: 0px; padding-bottom: 10px; padding-left: 0px;">
-                                                        <div style="font-family: Helvetica, Arial, sans-serif; line-height: 32px; color: #333333; font-size: 20px;"
-                                                            class="em-mob-font_size-20px em-mob-line_height-28px em-font-Rubik-Bold">
-                                                            ЗДРАВСТВУЙТЕ,</div>
-                                                    </td>
-                                                </tr>
-                                            </table>
-                                            <table cellpadding="0" cellspacing="0" border="0" width="100%"
-                                                em="atom">
-                                                <tr>
-                                                    <td style="padding-bottom: 10px;">
-                                                        <div style="font-family: Helvetica, Arial, sans-serif; font-size: 14px; line-height: 21px; color: #222222;"
-                                                            class="em-mob-line_height-18px em-font-Rubik-Regular">Мы
-                                                            рады пригласить Вас на очное совещание молодых
-                                                            педагогов<br><strong>Дата:
-                                                            </strong>20.03.2024<br><strong>Время:
-                                                            </strong>17:00-18:30<br><strong>Место: </strong>актовый зал
-                                                            ШК-3 (<a href="https://maps.app.goo.gl/r3oVuQa5nN1GkNwk7"
-                                                                target="_blank"
-                                                                style="color: #000000; text-decoration: none;">ул.
-                                                                Адмирала Лазарева, д. 40к2</a>)</div>
-                                                    </td>
-                                                </tr>
-                                            </table>
-                                            <table cellpadding="0" cellspacing="0" border="0" width="100%"
-                                                em="atom">
-                                                <tr>
-                                                    <td>
-                                                        <a href="https://maps.app.goo.gl/r3oVuQa5nN1GkNwk7"
-                                                            target="_blank"><img
-                                                                src="https://img.us12.besteml.com/en/v5/user-files?userId=6573317&resource=himg&disposition=inline&name=6ux1ksuf75f79peacmkssb739swyyq9uir6xn1i4grnh6yiif831jzhg4jyqekeru4ze47hpbgwjs9yqcstzf6howejmfkeqaodquxwed1heguhrc8p1agj7xu4tra78fudw3cqy8a8dnkkntz9tjm5ip1w"
-                                                                width="580" border="0" alt=""
-                                                                style="display: block; width: 100%; max-width: 580px; border-radius: 24px;"></a>
-                                                    </td>
-                                                </tr>
-                                            </table>
-
-                                        </td>
-                                    </tr>
-                                </table>
-                                <table border="0" cellspacing="0" cellpadding="0" class="em-mob-width-100perc">
-                                    <tr>
-                                        <td align="center" valign="top" class="em-mob-wrap em-mob-width-100perc"
-                                            style="border-radius: 10px; padding: 10px 0px;">
-                                            <table width="93%" border="0" cellspacing="0" cellpadding="0"
-                                                class="em-mob-width-91perc">
-                                                <tr>
-                                                    <td align="left">
-                                                        <table cellpadding="0" cellspacing="0" border="0"
-                                                            width="100%" em="atom">
-                                                            <tr></tr>
-                                                        </table>
-                                                    </td>
-                                                </tr>
-                                            </table>
-                                        </td>
-                                        <td width="20" class="em-mob-wrap em-mob-height-20px">&nbsp;</td>
-                                    </tr>
-                                </table>
-                            </td>
-                        </tr>
-                        <tr em="block" class="em-structure">
-                            <td align="center">
-
-                            </td>
-                        </tr>
-                        <tr em="block" class="em-structure">
-                            <td align="center">
                                 <table cellpadding="0" cellspacing="0" border="0" width="100%"
                                     em="atom">
                                     <tr>
@@ -519,137 +505,7 @@
                                 </table>
                             </td>
                         </tr>
-                        <tr em="block" class="em-structure">
-                            <td align="center"
-                                style="padding: 0px 40px; border-top-left-radius: 24px; border-top-right-radius: 24px;"
-                                bgcolor="#FFFFFF" class="em-mob-padding_left-20 em-mob-padding_right-20">
-                                <table border="0" cellspacing="0" cellpadding="0" class="em-mob-width-100perc">
-                                    <tr>
-                                        <td width="580" valign="top" class="em-mob-wrap em-mob-width-100perc">
-                                            <table cellpadding="0" cellspacing="0" border="0" width="100%"
-                                                em="atom">
-                                                <tr>
-                                                    <td style="padding: 20px 0 10px;">
-                                                        <div style="font-family: Helvetica, Arial, sans-serif; font-size: 20px; line-height: 38px; color: #333333;"
-                                                            class="em-font-Rubik-Bold">На встрече Вы сможете</div>
-                                                    </td>
-                                                </tr>
-                                            </table>
-                                        </td>
-                                    </tr>
-                                </table>
-                            </td>
-                        </tr>
-                        <tr em="block" class="em-structure">
-                            <td align="center"
-                                style="padding-right: 40px; padding-bottom: 7px; padding-left: 40px; border-bottom-right-radius: 24px; border-bottom-left-radius: 24px;"
-                                bgcolor="#FFFFFF" class="em-mob-padding_left-20 em-mob-padding_right-20">
-                                <table border="0" cellspacing="0" cellpadding="0" class="em-mob-width-100perc">
-                                    <tr>
-                                        <td width="580" valign="top" class="em-mob-wrap em-mob-width-100perc">
-                                            <table align="center" cellpadding="0" cellspacing="0" border="0"
-                                                width="100%">
-                                                <tr em="atom">
-                                                    <td width="36" valign="top">
-                                                        <table width="26" border="0" cellspacing="0"
-                                                            cellpadding="0">
-                                                            <tr>
-                                                                <td align="center" height="26" bgcolor="#1C52DC"
-                                                                    style="height: 26px; border-radius: 50px;">
-                                                                    <div
-                                                                        style="font-family: -apple-system, 'Segoe UI', 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif; font-size: 16px; line-height: 16px; color: #FFFFFF;">
-                                                                        1</div>
-                                                                </td>
-                                                            </tr>
-                                                        </table>
-                                                    </td>
-                                                    <td align="left" valign="top">
-                                                        <table cellpadding="0" cellspacing="0" border="0"
-                                                            width="100%" em="atom">
-                                                            <tr>
-                                                                <td style="padding-bottom: 5px;">
-                                                                    <div
-                                                                        style="font-family: -apple-system, 'Segoe UI', 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif; font-size: 16px; line-height: 21px; color: #333333;">
-                                                                        <strong>Задать вопросы директору ГБОУ Школа №
-                                                                            2009</strong>
-                                                                    </div>
-                                                                </td>
-                                                            </tr>
-                                                        </table>
-                                                        <table cellpadding="0" cellspacing="0" border="0"
-                                                            width="100%" em="atom">
-                                                            <tr>
-                                                                <td style="padding-bottom: 15px;">
-                                                                    <font color="#5a5a5a"
-                                                                        face="-apple-system, Segoe UI, Helvetica Neue, Helvetica, Roboto, Arial, sans-serif"
-                                                                        size="3"><span
-                                                                            style="caret-color: #5a5a5a;">Список
-                                                                            предложенных тем приведён ниже.</span>
-                                                                    </font><br>
-                                                                </td>
-                                                            </tr>
-                                                        </table>
-                                                    </td>
-                                                </tr>
-                                                <tr em="atom">
-                                                    <td width="36" valign="top">
-                                                        <table width="26" border="0" cellspacing="0"
-                                                            cellpadding="0">
-                                                            <tr>
-                                                                <td align="center" height="26" bgcolor="#1C52DC"
-                                                                    style="height: 26px; border-radius: 50px;">
-                                                                    <div
-                                                                        style="font-family: -apple-system, 'Segoe UI', 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif; font-size: 16px; line-height: 16px; color: #FFFFFF;">
-                                                                        2</div>
-                                                                </td>
-                                                            </tr>
-                                                        </table>
-                                                    </td>
-                                                    <td align="left" valign="top">
-                                                        <table cellpadding="0" cellspacing="0" border="0"
-                                                            width="100%" em="atom">
-                                                            <tr>
-                                                                <td style="padding-bottom: 5px;">
-                                                                    <div
-                                                                        style="font-family: -apple-system, 'Segoe UI', 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif; font-size: 16px; line-height: 21px; color: #333333;">
-                                                                        <strong>Предложить идеи по развитию
-                                                                            образовательной организации</strong>
-                                                                    </div>
-                                                                </td>
-                                                            </tr>
-                                                        </table>
-                                                        <table cellpadding="0" cellspacing="0" border="0"
-                                                            width="100%" em="atom">
-                                                            <tr>
-                                                                <td style="padding-bottom: 15px;">
-                                                                    <font color="#5a5a5a"
-                                                                        face="-apple-system, Segoe UI, Helvetica Neue, Helvetica, Roboto, Arial, sans-serif"
-                                                                        size="3"><span
-                                                                            style="caret-color: #5a5a5a;">Поделитесь
-                                                                            своими идеями по развитию с администрацией
-                                                                            школы.</span></font><br>
-                                                                </td>
-                                                            </tr>
-                                                        </table>
-                                                    </td>
-                                                </tr>
-
-                                            </table>
-                                        </td>
-                                    </tr>
-                                </table>
-                            </td>
-                        </tr>
-                        <tr em="block" class="em-structure">
-                            <td align="center">
-                                <table cellpadding="0" cellspacing="0" border="0" width="100%"
-                                    em="atom">
-                                    <tr>
-                                        <td height="20"></td>
-                                    </tr>
-                                </table>
-                            </td>
-                        </tr>
+                        {{-- FIN ESPACIO --}}
                         <tr em="block" class="em-structure">
                             <td align="center" class="em-mob-padding_left-20 em-mob-padding_right-20">
                                 <table align="center" border="0" cellspacing="0" cellpadding="0"
@@ -689,8 +545,8 @@
                                                         style="padding-right: 0px; padding-bottom: 10px; padding-left: 0px;">
                                                         <div style="font-family: Helvetica, Arial, sans-serif; line-height: 32px; color: #333333; font-size: 20px;"
                                                             class="em-mob-font_size-20px em-mob-line_height-28px em-font-Rubik-Bold">
-                                                            Пройдите, пожалуйста, короткий опрос, чтобы наша встреча
-                                                            прошла максимально продуктивно</div>
+                                                            Solicita una llamada directa y te contactamos al instante
+                                                            por un asesor</div>
                                                     </td>
                                                 </tr>
                                             </table>
@@ -703,12 +559,13 @@
                                                             <tr>
                                                                 <td align="center" valign="middle" height="41"
                                                                     style="background-color: #1c52dc; height: 41px; border-radius: 24px;">
-                                                                    <a href="https://forms.gle/birqDVXWWSs5LTkQ6"
-                                                                        target="_blank"
+                                                                    <a data-toggle="modal" data-target="#exampleModal"
+                                                                        href="javascript:void()"
                                                                         style="display: block; height: 41px; font-family: Helvetica, Arial, sans-serif; color: #ffffff; font-size: 16px; line-height: 41px; text-decoration: none; white-space: nowrap;"
                                                                         class="em-font-Rubik-Bold"><strong
-                                                                            style="font-weight: 600;">Пройти
-                                                                            опрос</strong></a>
+                                                                            style="font-weight: 600;">
+                                                                            Solicitar
+                                                                        </strong></a>
                                                                 </td>
                                                             </tr>
                                                         </table>
@@ -739,6 +596,8 @@
                                 </table>
                             </td>
                         </tr>
+
+                        {{-- INICIO ESPACIO --}}
                         <tr em="block" class="em-structure">
                             <td align="center">
                                 <table cellpadding="0" cellspacing="0" border="0" width="100%"
@@ -749,6 +608,153 @@
                                 </table>
                             </td>
                         </tr>
+                        {{-- FIN ESPACIO --}}
+                        <tr em="block" class="em-structure">
+                            <td align="center"
+                                style="padding: 0px 40px; border-top-left-radius: 24px; border-top-right-radius: 24px;"
+                                bgcolor="#FFFFFF" class="em-mob-padding_left-20 em-mob-padding_right-20">
+                                <table border="0" cellspacing="0" cellpadding="0" class="em-mob-width-100perc">
+                                    <tr>
+                                        <td width="580" valign="top" class="em-mob-wrap em-mob-width-100perc">
+                                            <table cellpadding="0" cellspacing="0" border="0" width="100%"
+                                                em="atom">
+                                                <tr>
+                                                    <td style="padding: 20px 0 10px;">
+                                                        <div style="font-family: Helvetica, Arial, sans-serif; font-size: 20px; line-height: 38px; color: #333333;"
+                                                            class="em-font-Rubik-Bold">Verificaciones y Recolección de
+                                                            Datos  </div>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <hr>
+
+                        <tr em="block" class="em-structure">
+                            <td align="center"
+                                style="padding-right: 40px; padding-bottom: 7px; padding-left: 40px; border-bottom-right-radius: 24px; border-bottom-left-radius: 24px;"
+                                bgcolor="#FFFFFF" class="em-mob-padding_left-20 em-mob-padding_right-20">
+                                <table border="0" cellspacing="0" cellpadding="0" class="em-mob-width-100perc">
+                                    <tr>
+                                        <td width="580" valign="top" class="em-mob-wrap em-mob-width-100perc">
+                                            <table align="center" cellpadding="0" cellspacing="0" border="0"
+                                                width="100%">
+                                                <tr em="atom">
+                                                    <td width="36" valign="top">
+                                                        <table width="26" border="0" cellspacing="0"
+                                                            cellpadding="0">
+                                                            <tr>
+                                                                <td align="center" height="26" bgcolor="#1C52DC"
+                                                                    style="height: 26px; border-radius: 50px;">
+                                                                    <div
+                                                                        style="font-family: -apple-system, 'Segoe UI', 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif; font-size: 16px; line-height: 16px; color: #FFFFFF;">
+                                                                        1</div>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                    <td align="left" valign="top">
+                                                        <table cellpadding="0" cellspacing="0" border="0"
+                                                            width="100%" em="atom">
+                                                            <tr>
+                                                                <td style="padding-bottom: 5px;">
+                                                                    <div
+                                                                        style="font-family: -apple-system, 'Segoe UI', 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif; font-size: 16px; line-height: 21px; color: #333333;">
+                                                                        <strong>
+                                                                            Somos una empresa verificada por <img
+                                                                                src="https://proludica.com/wp-content/uploads/2019/10/SUNAT.png"
+                                                                                width="80" alt="">
+                                                                        </strong>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                        <table cellpadding="0" cellspacing="0" border="0"
+                                                            width="100%" em="atom">
+                                                            <tr>
+                                                                <td style="padding-bottom: 15px;">
+                                                                    <font color="#5a5a5a"
+                                                                        face="-apple-system, Segoe UI, Helvetica Neue, Helvetica, Roboto, Arial, sans-serif"
+                                                                        size="3"><span
+                                                                            style="caret-color: #5a5a5a;">
+                                                                            Con el sólido resguardo de SUNAT Perú
+                                                                        </span>
+                                                                    </font><br>
+                                                                    <hr>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                                <tr em="atom">
+                                                    <td width="36" valign="top">
+                                                        <table width="26" border="0" cellspacing="0"
+                                                            cellpadding="0">
+                                                            <tr>
+                                                                <td align="center" height="26" bgcolor="#1C52DC"
+                                                                    style="height: 26px; border-radius: 50px;">
+                                                                    <div
+                                                                        style="font-family: -apple-system, 'Segoe UI', 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif; font-size: 16px; line-height: 16px; color: #FFFFFF;">
+                                                                        2</div>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                    <td align="left" valign="top">
+                                                        <table cellpadding="0" cellspacing="0" border="0"
+                                                            width="100%" em="atom">
+                                                            <tr>
+                                                                <td style="padding-bottom: 5px;">
+                                                                    <div
+                                                                        style="font-family: -apple-system, 'Segoe UI', 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif; font-size: 16px; line-height: 21px; color: #333333;">
+                                                                        <strong>
+                                                                            Fidelidad de Datos otorgados de <img
+                                                                                src="https://plateccs.com.pe/wp-content/uploads/reniec-logo.png"
+                                                                                width="105" alt="">
+                                                                        </strong>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                        <table cellpadding="0" cellspacing="0" border="0"
+                                                            width="100%" em="atom">
+                                                            <tr>
+                                                                <td style="padding-bottom: 15px;">
+                                                                    <font color="#5a5a5a"
+                                                                        face="-apple-system, Segoe UI, Helvetica Neue, Helvetica, Roboto, Arial, sans-serif"
+                                                                        size="3"><span
+                                                                            style="caret-color: #5a5a5a;">
+                                                                            Integridad de datos de con la garantía de
+                                                                            RENIEC PERÚ
+                                                                        </span></font><br>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        {{-- INICIO ESPACIO --}}
+                        <tr em="block" class="em-structure">
+                            <td align="center">
+                                <table cellpadding="0" cellspacing="0" border="0" width="100%"
+                                    em="atom">
+                                    <tr>
+                                        <td height="20"></td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        {{-- FIN ESPACIO --}}
+                        
                         <tr em="block" class="em-structure">
                             <td align="center" style="padding: 20px 40px 10px; border-radius: 24px;"
                                 bgcolor="#FFFFFF" class="em-mob-padding_left-20 em-mob-padding_right-20">
@@ -761,7 +767,7 @@
                                                     <td style="padding-bottom: 20px;">
                                                         <div class="em-mob-font_size-26px em-mob-line_height-32px em-font-Rubik-Bold"
                                                             style="font-family: Helvetica, Arial, sans-serif; font-size: 20px; line-height: 48px; color: #333333;">
-                                                            Предлагаемые темы</div>
+                                                            Beneficios de Facturito</div>
                                                     </td>
                                                 </tr>
                                             </table>
@@ -786,8 +792,8 @@
                                                 <tr>
                                                     <td style="padding-bottom: 5px;">
                                                         <div style="line-height: 21px; font-family: Helvetica, Arial, sans-serif; font-size: 16px;"
-                                                            class="em-font-Rubik-Bold"><b>Возможности карьерного <span
-                                                                    style="caret-color: #333333;">роста</span></b>
+                                                            class="em-font-Rubik-Bold"><b>Ahorros y mas <span
+                                                                    style="caret-color: #333333;">Ganancias</span></b>
                                                         </div>
                                                     </td>
                                                 </tr>
@@ -797,8 +803,9 @@
                                                 <tr>
                                                     <td style="padding-bottom: 20px;">
                                                         <div style="font-family: Helvetica, Arial, sans-serif; font-size: 16px; line-height: 21px; color: #5a5a5a;"
-                                                            class="em-font-Rubik-Regular"> в рамках образовательной
-                                                            организации</div>
+                                                            class="em-font-Rubik-Regular">
+                                                            Un software completo, que facilita la gestion de tu empresa.
+                                                        </div>
                                                     </td>
                                                 </tr>
                                             </table>
@@ -820,8 +827,9 @@
                                                 <tr>
                                                     <td style="padding-bottom: 5px;">
                                                         <div style="font-family: Helvetica, Arial, sans-serif; font-size: 16px; line-height: 21px; color: #333333;"
-                                                            class="em-font-Rubik-Bold"> <strong>Где и как получить
-                                                                поддержку в школе</strong></div>
+                                                            class="em-font-Rubik-Bold"> <strong>
+                                                                Crecimiento exponencial
+                                                            </strong></div>
                                                     </td>
                                                 </tr>
                                             </table>
@@ -833,8 +841,10 @@
                                                             face="-apple-system, Segoe UI, Helvetica Neue, Helvetica, Roboto, Arial, sans-serif"
                                                             size="3"><span style="caret-color: #5a5a5a;"><span
                                                                     style="font-family: Helvetica, Arial, sans-serif;"
-                                                                    class="em-font-Rubik-Regular">методическую или
-                                                                    иную</span></span></font><br>
+                                                                    class="em-font-Rubik-Regular">
+                                                                    Al tener facturito tendrás el poder de manejar a tus
+                                                                    clientes en forma masiva.
+                                                                </span></span></font><br>
                                                     </td>
                                                 </tr>
                                             </table>
@@ -856,7 +866,9 @@
                                                 <tr>
                                                     <td style="padding-bottom: 5px;">
                                                         <div style="font-family: Helvetica, Arial, sans-serif; font-size: 16px; line-height: 21px; color: #333333;"
-                                                            class="em-font-Rubik-Bold">Личные вопросы</div>
+                                                            class="em-font-Rubik-Bold">
+                                                            Serás el Preferido de la competencia
+                                                        </div>
                                                     </td>
                                                 </tr>
                                             </table>
@@ -865,14 +877,100 @@
                                                 <tr>
                                                     <td style="padding-bottom: 20px;">
                                                         <font color="#5a5a5a" face="Rubik, sans-serif"
-                                                            size="3"><span style="caret-color: #5a5a5a;">о
-                                                                выборе профессии и о многом другом</span></font><br>
+                                                            size="3"><span style="caret-color: #5a5a5a;">
+                                                                Nuestros software mantienen un perfil destacado al nivel
+                                                                de gestión y de estética.</span></font><br>
                                                     </td>
                                                 </tr>
                                             </table>
                                         </td>
                                     </tr>
                                 </table>
+                            </td>
+                        </tr>
+                        <tr em="block" class="em-structure">
+                            <td align="center">
+                                <table cellpadding="0" cellspacing="0" border="0" width="100%"
+                                    em="atom">
+                                    <tr>
+                                        <td height="20"></td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr em="block" class="em-structure">
+                            <td align="center" style="padding: 30px 40px 7px 39px; border-radius: 24px;"
+                                bgcolor="#FFFFFF"
+                                class="em-mob-padding_top-20 em-mob-padding_right-20 em-mob-padding_bottom-20 em-mob-padding_left-20">
+                                <table border="0" cellspacing="0" cellpadding="0" class="em-mob-width-100perc">
+                                    <tr>
+                                        <td width="580" valign="top" class="em-mob-wrap em-mob-width-100perc">
+                                            <table cellpadding="0" cellspacing="0" border="0" width="100%"
+                                                em="atom">
+                                                <tr>
+                                                    <td
+                                                        style="padding-right: 0px; padding-bottom: 10px; padding-left: 0px;">
+                                                        <div style="font-family: Helvetica, Arial, sans-serif; line-height: 32px; color: #333333; font-size: 20px;"
+                                                            class="em-mob-font_size-20px em-mob-line_height-28px em-font-Rubik-Bold">
+                                                            Visítanos </div>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                            <table cellpadding="0" cellspacing="0" border="0" width="100%"
+                                                em="atom">
+                                                <tr>
+                                                    <td style="padding-bottom: 10px;">
+                                                        <div style="font-family: Helvetica, Arial, sans-serif; font-size: 14px; line-height: 21px; color: #222222;"
+                                                            class="em-mob-line_height-18px em-font-Rubik-Regular">
+                                                            Nos ubicamos en Nuevo Chimbote, Región de Ancash<br>
+                                                            Horario de atención: <br>
+                                                            <strong>De: </strong> Lunes a Sábado
+                                                            <br>
+                                                            <strong>De: </strong> 08:00-18:30<br>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                            <table cellpadding="0" cellspacing="0" border="0" width="100%"
+                                                em="atom">
+                                                <tr>
+                                                    <td>
+
+                                                        <body onLoad="initMap()">
+                                                            <div id="map"></div>
+                                                        </body>
+
+                                                    </td>
+                                                </tr>
+                                            </table>
+
+                                        </td>
+                                    </tr>
+                                </table>
+                                <table border="0" cellspacing="0" cellpadding="0" class="em-mob-width-100perc">
+                                    <tr>
+                                        <td align="center" valign="top" class="em-mob-wrap em-mob-width-100perc"
+                                            style="border-radius: 10px; padding: 10px 0px;">
+                                            <table width="93%" border="0" cellspacing="0" cellpadding="0"
+                                                class="em-mob-width-91perc">
+                                                <tr>
+                                                    <td align="left">
+                                                        <table cellpadding="0" cellspacing="0" border="0"
+                                                            width="100%" em="atom">
+                                                            <tr></tr>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <td width="20" class="em-mob-wrap em-mob-height-20px">&nbsp;</td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr em="block" class="em-structure">
+                            <td align="center">
+
                             </td>
                         </tr>
                         <tr em="block" class="em-structure">
@@ -918,15 +1016,15 @@
                                                                 <td width="40">
                                                                     <a href="https://vk.com/school2009official"
                                                                         target="_blank"><img
-                                                                            src="https://img.us12.besteml.com/en/v5/user-files?userId=6573317&resource=himg&disposition=inline&name=6tc56za44afuyueacmkssb739swyyq9uir6xn1i4grnh6yiif831jzhg4jyqekerubfgi1o7czn9dqts5da5qu9qtj8gz7dsfdsguapi9xcwis1gtog1p87m56xi7bru83fppbzydbfimuz1f6ibzqfsfae"
+                                                                            src="https://freepnglogo.com/images/all_img/1697562496facebook-logo-png.png"
                                                                             width="30" border="0"
                                                                             alt=""
                                                                             style="display: block; max-width: 30px;"></a>
                                                                 </td>
-                                                                <td width="40">
+                                                                <td width="35">
                                                                     <a href="https://ok.ru/group/70000001499882"
                                                                         target="_blank"><img
-                                                                            src="https://img.us12.besteml.com/en/v5/user-files?userId=6573317&resource=himg&disposition=inline&name=68khakuk8491rbeacmkssb739swyyq9uir6xn1i4grnh6yiif831jzhg4jyqekeruqy3yyd6aaekzwwkbdw4t1ciofnyo55na5gtxhn7fih13ysqm5kwe3eai5rtuu1p7mxzq4tybzff4xwhibh7mcjdkma"
+                                                                            src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Instagram_logo_2022.svg/1200px-Instagram_logo_2022.svg.png"
                                                                             width="30" border="0"
                                                                             alt=""
                                                                             style="display: block;"></a>
@@ -934,8 +1032,8 @@
                                                                 <td width="40">
                                                                     <a href="https://t.me/school2009official"
                                                                         target="_blank"><img
-                                                                            src="https://img.us12.besteml.com/en/v5/user-files?userId=6573317&resource=himg&disposition=inline&name=69aeeuywhqj7zieacmkssb739swyyq9uir6xn1i4grnh6yiif831jzhg4jyqekeru5qs3y7wmajgzgnsnyycwxjcyjs3kumuymdtj3i84j7t4wow5it9s733m6jg5ufn8qtmyyd4yedbze4bfxtsf5rasjw"
-                                                                            width="30" border="0"
+                                                                            src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/2044px-WhatsApp.svg.png"
+                                                                            width="40" border="0"
                                                                             alt=""
                                                                             style="display: block;"></a>
                                                                 </td>
@@ -955,56 +1053,15 @@
                                                 <tr>
                                                     <td style="padding-top: 20px; padding-bottom: 10px; border-top: 1px solid #EEEEEE"
                                                         align="center" class="em-mob-padding_bottom-15">
-                                                        
-                                                        <script>
-                                                            var myLatLng = { lat: 14.151171, lng: -90.841083 };
-var myLatLng2 = { lat: 14.15009000, lng: -90.84334708 };
-
-function initMap() {
-
-    var map = new google.maps.Map(document.getElementById('map'), {
-      zoom: 4,
-      center: myLatLng,
-      mapTypeId: 'terrain',
-      zoom: 18
-    });
-  
-    var markerYesShow = new google.maps.Marker({
-      position: myLatLng,
-      map: map,
-      title: 'Yes Show Into Radio'
-    });
-    
-    var markerNotShow = new google.maps.Marker({
-      position: myLatLng2,
-      map: map,
-      title: 'Not Show '
-    });
-  
-    var alerta = new google.maps.Circle({
-      strokeColor: '#FF0000',
-      strokeOpacity: 0.8,
-      strokeWeight: 2,
-      fillColor: '#FF0000',
-      fillOpacity: 0.35,
-      map: map,
-      center: myLatLng,
-      radius: 100
-    });
-}
-
-                                                        </script>
-                                                        <div id="map"></div>
-                                                        <!-- Replace the value of the key parameter with your own API key. -->
-                                                       <script async defer
-                                                       src="https://maps.googleapis.com/maps/api/js??key=AIzaSyAYWHoI7YpznDze_nChj5PyRxEhh4fdI9Y&callback=initMap">
-                                                       </script>
                                                         <div style="font-family: Helvetica, Arial, sans-serif; font-size: 14px; line-height: 18px; color: #a3adbb;"
                                                             class="em-mob-font_size-14px em-mob-line_height-18px em-font-Rubik-Regular"
                                                             align="left">
-                                                            Somos la empresa de facturación electrónica líder del Perú. Autorizada para funcionar 
-                                                            como empresa facturación electrónica o entidad extendida de la administración de impuestos.
-                                                            Contamos con experiencia a nivel global, trabajando con la estandarización de facturas electrónicas.
+                                                            Somos la empresa de facturación electrónica líder del Perú.
+                                                            Autorizada para funcionar
+                                                            como empresa facturación electrónica o entidad extendida de
+                                                            la administración de impuestos.
+                                                            Contamos con experiencia a nivel global, trabajando con la
+                                                            estandarización de facturas electrónicas.
                                                         </div>
                                                     </td>
                                                 </tr>
@@ -1026,7 +1083,7 @@ function initMap() {
                                                                 <td class="em-mob-padding_bottom-10">
                                                                     <div
                                                                         style="font-family: -apple-system, 'Segoe UI', 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif; font-size: 14px; line-height: 21px; color: #9299a2;">
-                                                                        ©&nbsp;{{date("Y")}}</div>
+                                                                        ©&nbsp;{{ date('Y') }}</div>
                                                                 </td>
                                                             </tr>
                                                         </table>
@@ -1042,15 +1099,56 @@ function initMap() {
                     <!--[if (gte mso 9)|(IE)]>
                     </td></tr></table>
                     <![endif]-->
-    <a href="https://wa.me/+51902517849?text=Hola, quisiera adquirir el servicio..." class="floatWapp"
-    target="_blank">
-    <i class="fa fa-whatsapp my-floatWapp"></i>
-</a>
+                    <a href="https://wa.me/+51902517849?text=Hola, quisiera adquirir el servicio..." class="floatWapp"
+                        target="_blank">
+                        <i class="fa fa-whatsapp my-floatWapp"></i>
+                    </a>
 
 
                 </td>
             </tr>
         </table>
     </body>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content">
 
+                <!--Header-->
+                <div class="modal-header">
+                    <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20%281%29.jpg"
+                        class="rounded-circle img-responsive" alt="Avator photo">
+                </div>
+                <!--Body-->
+                <div class="modal-body text-center mb-1">
+
+
+                    <div class="text-center" style="margin-left: 20px">
+
+                        <b>RAUL BACA - SOPORTE TECNICO</b>
+                        <ul class="telefono text-center mr-2">
+                            <li><a href="https://wa.me/+51902517849?text=Hola, quisiera adquirir el servicio..."
+                                    target="_blank"><span><i class="fa fa-whatsapp"></i> WHATSAPP</span> + 51
+                                    902517849 </a></li>
+                        </ul>
+                        <br>
+                        <br>
+                    </div>
+                    <div class="text-center" style="margin-left: 20px">
+                        <br>
+                        <br>
+                        <b>PERLA GARCIA - CALL CENTER</b>
+                        <ul class="telefono text-center mr-2">
+                            <li><a href="https://wa.me/+51900407353?text=Hola, quisiera adquirir el servicio..."
+                                    target="_blank"><span><i class="fa fa-whatsapp"></i> WHATSAPP</span> + 51
+                                    900407353 </a></li>
+                        </ul>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
 </x-home-layout>

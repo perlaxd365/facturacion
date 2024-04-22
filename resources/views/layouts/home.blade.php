@@ -16,8 +16,8 @@
     <meta name="description" content="" />
     <meta name="author" content="" />
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
-
+    <title>Facturito</title>
+    <link rel="icon" type="image/png" href="https://tusistemacontable.com/wp-content/uploads/2023/01/facturito.jpg"/>
     <!-- slider stylesheet -->
     <link rel="stylesheet" type="text/css"
         href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.3/assets/owl.carousel.min.css" />
