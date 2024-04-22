@@ -944,9 +944,13 @@
                                                 em="atom">
                                                 <tr>
                                                     <td>
-<map name="">
-    <img src="https://maps.googleapis.com/maps/api/staticmap?center=-9.122424,-78.522164&zoom=13&size=1200x1200&key=AIzaSyBfZGs4MOM0s5Gty1z88S-KcZFYDDcDVic&markers=color:red%7Clabel:Facturito%7C-9.122424,-78.522164" alt="">
-</map>
+                                                        <a href="https://maps.app.goo.gl/Mwehar8V1oVH65SC9">
+                                                        <map name="">
+                                                                <img src="https://maps.googleapis.com/maps/api/staticmap?center=-9.122424,-78.522164&zoom=13&size=1200x1200&key=AIzaSyBfZGs4MOM0s5Gty1z88S-KcZFYDDcDVic&markers=color:red%7Clabel:Facturito%7C-9.122424,-78.522164"
+                                                                    alt="">
+                                                        </map>
+                                                    </a>
+
                                                     </td>
                                                 </tr>
                                             </table>
