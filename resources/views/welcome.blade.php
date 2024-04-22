@@ -944,12 +944,17 @@
                                                 em="atom">
                                                 <tr>
                                                     <td>
-                                                        <a href="https://maps.app.goo.gl/Mwehar8V1oVH65SC9" target="_blank">
-                                                        <map name="" class="col-md-12">
-                                                                <img width="300" src="https://maps.googleapis.com/maps/api/staticmap?center=-9.122424,-78.522164&zoom=13&size=900x500&key=AIzaSyBfZGs4MOM0s5Gty1z88S-KcZFYDDcDVic&markers=color:red%7Clabel:Facturito%7C-9.122424,-78.522164"
-                                                                    alt="">
-                                                        </map>
-                                                    </a>
+                                                        <div class="col-md-12">
+                                                            <a href="https://maps.app.goo.gl/Mwehar8V1oVH65SC9"
+                                                                target="_blank">
+                                                                <map name="">
+                                                                    <img width="400"
+                                                                        src="https://maps.googleapis.com/maps/api/staticmap?center=-9.122424,-78.522164&zoom=13&size=1200x700&key=AIzaSyBfZGs4MOM0s5Gty1z88S-KcZFYDDcDVic&markers=color:red%7Clabel:Facturito%7C-9.122424,-78.522164"
+                                                                        alt="">
+                                                                </map>
+                                                        </div>
+
+                                                        </a>
 
                                                     </td>
                                                 </tr>
