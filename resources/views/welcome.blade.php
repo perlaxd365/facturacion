@@ -944,11 +944,11 @@
                                                 em="atom">
                                                 <tr>
                                                     <td>
-
-                                                        <body onLoad="initMap()">
-                                                            <div id="map"></div>
-                                                        </body>
-
+<map name="">
+    <img src="https://maps.googleapis.com/maps/api/staticmap?center=-9.122424,-78.522164&zoom=13&size=1200x1200&key=AIzaSyBfZGs4MOM0s5Gty1z88S-KcZFYDDcDVic" alt="">
+</map>
+                                                        
+                                                            <img src="https://maps.googleapis.com/maps/api/staticmap?center=Brooklyn+Bridge,New+York,NY&zoom=13&size=600x300&maptype=roadmap&markers=color:blue%7Clabel:S%7C40.702147,-74.015794&markers=color:green%7Clabel:G%7C40.711614,-74.012318&markers=color:red%7Clabel:C%7C40.718217,-73.998284&key=AIzaSyBfZGs4MOM0s5Gty1z88S-KcZFYDDcDVic">
                                                     </td>
                                                 </tr>
                                             </table>
@@ -1160,52 +1160,5 @@
             </div>
         </div>
     </div>
-    <!------------- Java Scripts for Map  ------------------->
-    <script type="text/javascript">
-        //--------------------- Sample code written by vIr ------------
-        var icon = new google.maps.MarkerImage("http://maps.google.com/mapfiles/ms/micons/blue.png",
-            new google.maps.Size(32, 32), new google.maps.Point(0, 0),
-            new google.maps.Point(16, 32));
-        var center = null;
-        var map = null;
-        var currentPopup;
-        var bounds = new google.maps.LatLngBounds();
-
-        var marker = new google.maps.Marker({
-            position: myCenter,
-            icon: {
-                url: '/images/marker.png',
-                size: new google.maps.Size(70, 86), //marker image size
-                origin: new google.maps.Point(0, 0), // marker origin
-                anchor: new google.maps.Point(35,
-                    86
-                ) // X-axis value (35, half of marker width) and 86 is Y-axis value (height of the marker).
-            }
-        });
-
-        function initMap() {
-            const map = new google.maps.Map(document.getElementById("map"), {
-                zoom: 15,
-                center: {
-                    lat: -9.122424,
-                    lng: -78.522164
-                },
-            });
-            const image =
-                "https://ugc.production.linktr.ee/8K3ymg7XQf2DuKch4wyz_1U05wSVathZ2iBC5?io=true&size=avatar-v3_0";
-            const beachMarker = new google.maps.Marker({
-                zoom: 15,
-                position: {
-                    lat: -9.122424,
-                    lng: -78.522164
-                },
-                map,
-                icon: {
-                    image
-                },
-            });
-
-        }
-    </script>
 
 </x-home-layout>
