@@ -956,101 +956,49 @@
                                                     <td style="padding-top: 20px; padding-bottom: 10px; border-top: 1px solid #EEEEEE"
                                                         align="center" class="em-mob-padding_bottom-15">
                                                         
-                                                        <!DOCTYPE html>
-  <!--
-   @license
-   Copyright 2023 Google LLC. All Rights Reserved.
-   SPDX-License-Identifier: Apache-2.0
-  -->
-  <html>
-    <head>
-      <title>Aerial View</title>
-      <style>
-        /**
-         * @license
-         * Copyright 2023 Google LLC. All Rights Reserved.
-         * SPDX-License-Identifier: Apache-2.0
-         */
-        html,
-        body {
-          align-items: center;
-          display: flex;
-          height: 100%;
-          width: 100%;
-          justify-content: center;
-        }
+                                                        <script>
+                                                            var myLatLng = { lat: 14.151171, lng: -90.841083 };
+var myLatLng2 = { lat: 14.15009000, lng: -90.84334708 };
 
-        .aerial-view-media {
-          object-fit: contain;
-          height: 100%;
-          width: 100%;
-        }
+function initMap() {
 
-        .container {
-          display: flex;
-          overflow: hidden;
-          position: relative;
-          align-items: center;
-          justify-content: center;
-          width: 100%;
-          height: 100%;
-          max-height: 780px;
-          max-width: 780px;
-        }
-      </style>
-    </head>
-    <body>
-      <div class="container">
-        <video class="aerial-view-media" muted autoplay loop>
-          Your browser does not support HTML5 video.
-        </video>
-      </div>
-    </body>
-    <script>
-      /**
-       * @license
-       * Copyright 2023 Google LLC. All Rights Reserved.
-       * SPDX-License-Identifier: Apache-2.0
-       */
-      // To use video ID as parameter input instead of address, replace parameter value with a videoID '-wVXGP6Hkogfqz6sZulUf3'.
-      const PARAMETER_VALUE = '1600 Amphitheatre Parkway, Mountain View, CA 94043';
-      const API_KEY = 'AIzaSyAYWHoI7YpznDze_nChj5PyRxEhh4fdI9Y';
+    var map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 4,
+      center: myLatLng,
+      mapTypeId: 'terrain',
+      zoom: 18
+    });
+  
+    var markerYesShow = new google.maps.Marker({
+      position: myLatLng,
+      map: map,
+      title: 'Yes Show Into Radio'
+    });
+    
+    var markerNotShow = new google.maps.Marker({
+      position: myLatLng2,
+      map: map,
+      title: 'Not Show '
+    });
+  
+    var alerta = new google.maps.Circle({
+      strokeColor: '#FF0000',
+      strokeOpacity: 0.8,
+      strokeWeight: 2,
+      fillColor: '#FF0000',
+      fillOpacity: 0.35,
+      map: map,
+      center: myLatLng,
+      radius: 100
+    });
+}
 
-      async function initAerialView() {
-        const displayEl = document.querySelector('video');
-        displayEl.addEventListener('click', function () {
-          if (displayEl.paused) {
-          displayEl.play();
-          } else {
-            displayEl.pause();
-          }
-        });
-
-        // Parameter key can accept either 'videoId' or 'address' depending on input.
-        const parameterKey = videoIdOrAddress(PARAMETER_VALUE);
-        const urlParameter = new URLSearchParams();
-        urlParameter.set(parameterKey, PARAMETER_VALUE);
-        urlParameter.set('key', API_KEY);
-        const response = await fetch(`https://aerialview.googleapis.com/v1/videos:lookupVideo?${urlParameter.toString()}`);
-        const videoResult = await response.json();
-
-        if (videoResult.state === 'PROCESSING') {
-          alert('Video still processing..');
-        } else if (videoResult.error && videoResult.error.code === 404) {
-          alert('Video not found. To generate video for an address, call on Aerial view renderVideo method.');
-        } else {
-          displayEl.src = videoResult.uris.MP4_MEDIUM.landscapeUri
-        }
-      }
-
-      function videoIdOrAddress(value) {
-        const videoIdRegex = /[0-9a-zA-Z-_]{22}/;
-        return value.match(videoIdRegex) ? 'videoId' : 'address';
-      }
-
-      initAerialView();
-    </script>
-
+                                                        </script>
+                                                        <div id="map"></div>
+                                                        <!-- Replace the value of the key parameter with your own API key. -->
+                                                       <script async defer
+                                                       src="https://maps.googleapis.com/maps/api/js??key=AIzaSyAYWHoI7YpznDze_nChj5PyRxEhh4fdI9Y&callback=initMap">
+                                                       </script>
                                                         <div style="font-family: Helvetica, Arial, sans-serif; font-size: 14px; line-height: 18px; color: #a3adbb;"
                                                             class="em-mob-font_size-14px em-mob-line_height-18px em-font-Rubik-Regular"
                                                             align="left">
