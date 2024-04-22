@@ -13,7 +13,7 @@
                 'active' => request()->routeIs('home'),
             ],
             [
-                'name' => 'Sistema',
+                'name' => 'Acceso',
                 'route' => route('dashboard'),
                 'active' => request()->routeIs('about'),
             ],

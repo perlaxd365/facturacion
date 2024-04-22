@@ -19,6 +19,7 @@
         "livewire/livewire": "^2.11",
         "luecano/numero-a-letras": "^3.0",
         "rappasoft/laravel-livewire-tables": "^2.14",
+        "spatie/laravel-sitemap": "^7.0",
         "wireui/wireui": "^1.17"
     },
     "require-dev": {

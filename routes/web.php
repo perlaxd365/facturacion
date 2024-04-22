@@ -5,9 +5,12 @@ use App\Models\Company;
 use App\Models\Guide;
 use App\Services\SunatService;
 use Greenter\Ws\Services\SunatEndpoints;
+use GuzzleHttp\Psr7\Uri;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\URL;
+use Spatie\Sitemap\Sitemap;
 
 /*
 |--------------------------------------------------------------------------
@@ -51,7 +54,7 @@ Route::middleware([
     Route::resource('companies', CompanyController::class);
 });
 
-Route::get('prueba', function(){
+Route::get('prueba', function () {
 
     $file = file_get_contents('certificate/LLAMA-PE-CERTIFICADO-DEMO-20609278235.pfx');
 
@@ -63,4 +66,11 @@ Route::get('prueba', function(){
     $certificate = $results['pkey'] . $results['cert'];
 
     return $certificate;
+});
+
+Route::get('/sitemap', function () {
+    $sitemap = Sitemap::create()
+        ->add(redirect()->route('home'))
+        ->add(redirect()->route('login'));
+    $sitemap->writeToFile(public_path('sitemap.xml'));
 });
