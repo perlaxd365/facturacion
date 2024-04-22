@@ -1,8 +1,24 @@
 <x-home-layout>
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&callback=initialize"></script>
 
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="home.css">
+    @php
+        $links = [
+            [
+                'name' => 'Inicio',
+                'route' => route('home'),
+                'active' => request()->routeIs('home'),
+            ],
+            [
+                'name' => 'Sistema',
+                'route' => route('dashboard'),
+                'active' => request()->routeIs('about'),
+            ],
+        ];
+    @endphp
     <style>
         @import url('https://fonts.googleapis.com/css?family=Roboto:300');
 
@@ -211,53 +227,6 @@
     <script src="http://maps.google.com/maps/api/js?key=AIzaSyAYWHoI7YpznDze_nChj5PyRxEhh4fdI9Y&sensor=false"
         type="text/javascript"></script>
 
-    <!------------- Java Scripts for Map  ------------------->
-    <script type="text/javascript">
-        //--------------------- Sample code written by vIr ------------
-        var icon = new google.maps.MarkerImage("http://maps.google.com/mapfiles/ms/micons/blue.png",
-            new google.maps.Size(32, 32), new google.maps.Point(0, 0),
-            new google.maps.Point(16, 32));
-        var center = null;
-        var map = null;
-        var currentPopup;
-        var bounds = new google.maps.LatLngBounds();
-
-        var marker = new google.maps.Marker({
-            position: myCenter,
-            icon: {
-                url: '/images/marker.png',
-                size: new google.maps.Size(70, 86), //marker image size
-                origin: new google.maps.Point(0, 0), // marker origin
-                anchor: new google.maps.Point(35,
-                    86
-                ) // X-axis value (35, half of marker width) and 86 is Y-axis value (height of the marker).
-            }
-        });
-
-        function initMap() {
-            const map = new google.maps.Map(document.getElementById("map"), {
-                zoom: 15,
-                center: {
-                    lat: -9.122424,
-                    lng: -78.522164
-                },
-            });
-            const image =
-                "https://ugc.production.linktr.ee/8K3ymg7XQf2DuKch4wyz_1U05wSVathZ2iBC5?io=true&size=avatar-v3_0";
-            const beachMarker = new google.maps.Marker({
-                zoom: 15,
-                position: {
-                    lat: -9.122424,
-                    lng: -78.522164
-                },
-                map,
-                icon: {
-                    image
-                },
-            });
-
-        }
-    </script>
 
 
     <body style="margin: 0px; padding: 0px;" class="col-md-12 bg-secondary">
@@ -281,6 +250,51 @@
                     <![endif]-->
                     <table cellpadding="0" cellspacing="0" width="100%" border="0"
                         style="max-width: 660px; min-width: 660px; width: 660px;" class="em-narrow-table">
+
+                        {{-- INICIO ESPACIO --}}
+                        <tr em="block" class="em-structure">
+                            <td align="center">
+                                <table cellpadding="0" cellspacing="0" border="0" width="100%" em="atom">
+                                    <tr>
+                                        <td height="20">
+
+                                            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                                                <a class="navbar-brand" href="#"><img
+                                                        src="https://facturito.ec/wp-content/uploads/2022/10/facturitoop5.png"
+                                                        width="140" alt=""> </a>
+                                                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                                                    data-target="#navbarText" aria-controls="navbarText"
+                                                    aria-expanded="false" aria-label="Toggle navigation">
+                                                    <span class="navbar-toggler-icon"></span>
+                                                </button>
+                                                <div class="collapse navbar-collapse" id="navbarText">
+
+                                                    <ul class="navbar-nav mr-auto">
+                                                        @foreach ($links as $link)
+                                                            <li class="nav-item {{ $link['active'] ? 'active' : '' }}">
+                                                                <a class="nav-link" href="{{ $link['route'] }}">
+                                                                    <h6>{{ $link['name'] }}</h6>
+                                                                    @if ($link['active'])
+                                                                        <span class="sr-only">(current)</span>
+                                                                    @endif
+                                                                </a>
+                                                            </li>
+                                                        @endforeach
+
+                                                    </ul>
+                                                    <span class="navbar-text">
+                                                        <h6><b>Facturación y más</b></h6>
+                                                    </span>
+                                                </div>
+                                            </nav>
+
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        {{-- FIN ESPACIO --}}
+
                         <tr em="block" class="em-structure">
                             <td align="center"
                                 style="padding: 10px 40px 1px; background-repeat: repeat; border-radius: 24px; background-size: cover;"
@@ -331,7 +345,8 @@
                         {{-- INICIO ESPACIO --}}
                         <tr em="block" class="em-structure">
                             <td align="center">
-                                <table cellpadding="0" cellspacing="0" border="0" width="100%" em="atom">
+                                <table cellpadding="0" cellspacing="0" border="0" width="100%"
+                                    em="atom">
                                     <tr>
                                         <td height="20"></td>
                                     </tr>
@@ -351,15 +366,10 @@
                                                 <tr>
                                                     <td
                                                         style="padding-right: 0px; padding-bottom: 10px; padding-left: 0px;">
-                                                        <div class="d-flex justify-content-center">
-                                                            <img src="https://facturito.ec/wp-content/uploads/2022/10/facturitoop5.png"
-                                                                width="138" border="0" alt=""
-                                                                style="display: block; width: 100%; max-width: 138px;">
-                                                        </div>
                                                         <div style="font-family: Helvetica, Arial, sans-serif; line-height: 32px; color: #333333; font-size: 20px;"
                                                             class="em-mob-font_size-20px em-mob-line_height-28px em-font-Rubik-Bold row">
                                                             Servicios Disponibles
-
+                                                            <br>
                                                         </div>
                                                         <br>
                                                     </td>
@@ -622,7 +632,7 @@
                                                     <td style="padding: 20px 0 10px;">
                                                         <div style="font-family: Helvetica, Arial, sans-serif; font-size: 20px; line-height: 38px; color: #333333;"
                                                             class="em-font-Rubik-Bold">Verificaciones y Recolección de
-                                                            Datos  </div>
+                                                            Datos </div>
                                                     </td>
                                                 </tr>
                                             </table>
@@ -631,7 +641,6 @@
                                 </table>
                             </td>
                         </tr>
-                        <hr>
 
                         <tr em="block" class="em-structure">
                             <td align="center"
@@ -754,7 +763,7 @@
                             </td>
                         </tr>
                         {{-- FIN ESPACIO --}}
-                        
+
                         <tr em="block" class="em-structure">
                             <td align="center" style="padding: 20px 40px 10px; border-radius: 24px;"
                                 bgcolor="#FFFFFF" class="em-mob-padding_left-20 em-mob-padding_right-20">
@@ -1151,4 +1160,52 @@
             </div>
         </div>
     </div>
+    <!------------- Java Scripts for Map  ------------------->
+    <script type="text/javascript">
+        //--------------------- Sample code written by vIr ------------
+        var icon = new google.maps.MarkerImage("http://maps.google.com/mapfiles/ms/micons/blue.png",
+            new google.maps.Size(32, 32), new google.maps.Point(0, 0),
+            new google.maps.Point(16, 32));
+        var center = null;
+        var map = null;
+        var currentPopup;
+        var bounds = new google.maps.LatLngBounds();
+
+        var marker = new google.maps.Marker({
+            position: myCenter,
+            icon: {
+                url: '/images/marker.png',
+                size: new google.maps.Size(70, 86), //marker image size
+                origin: new google.maps.Point(0, 0), // marker origin
+                anchor: new google.maps.Point(35,
+                    86
+                ) // X-axis value (35, half of marker width) and 86 is Y-axis value (height of the marker).
+            }
+        });
+
+        function initMap() {
+            const map = new google.maps.Map(document.getElementById("map"), {
+                zoom: 15,
+                center: {
+                    lat: -9.122424,
+                    lng: -78.522164
+                },
+            });
+            const image =
+                "https://ugc.production.linktr.ee/8K3ymg7XQf2DuKch4wyz_1U05wSVathZ2iBC5?io=true&size=avatar-v3_0";
+            const beachMarker = new google.maps.Marker({
+                zoom: 15,
+                position: {
+                    lat: -9.122424,
+                    lng: -78.522164
+                },
+                map,
+                icon: {
+                    image
+                },
+            });
+
+        }
+    </script>
+
 </x-home-layout>
