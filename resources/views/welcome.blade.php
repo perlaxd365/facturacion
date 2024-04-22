@@ -944,7 +944,7 @@
                                                 em="atom">
                                                 <tr>
                                                     <td>
-                                                        <div class="col-md-12">
+                                                        {{-- <div class="col-md-12">
                                                             <a href="https://maps.app.goo.gl/Mwehar8V1oVH65SC9"
                                                                 target="_blank">
                                                                     <img width="350"
@@ -953,7 +953,7 @@
                                                                         
                                                         </a>
                                                         </div>
-
+ --}}
 
                                                     </td>
                                                 </tr>
