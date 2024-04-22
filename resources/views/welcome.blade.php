@@ -947,8 +947,8 @@
                                                         <div class="col-md-12">
                                                             <a href="https://maps.app.goo.gl/Mwehar8V1oVH65SC9"
                                                                 target="_blank">
-                                                                <img width="250" height="300"
-                                                                    src="https://maps.googleapis.com/maps/api/staticmap?center=-9.122424,-78.522164&zoom=13&size=800x600&key=AIzaSyBfZGs4MOM0s5Gty1z88S-KcZFYDDcDVic&markers=color:red%7Clabel:Facturito%7C-9.122424,-78.522164"
+                                                                <img width="300" height="300"
+                                                                    src="https://maps.googleapis.com/maps/api/staticmap?center=-9.122424,-78.522164&zoom=13&size=900x600&key=AIzaSyBfZGs4MOM0s5Gty1z88S-KcZFYDDcDVic&markers=color:red%7Clabel:Facturito%7C-9.122424,-78.522164"
                                                                     alt="">
 
                                                             </a>
