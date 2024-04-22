@@ -1,42 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
     <url>
-        <loc>http://facturacion.test/HTTP/1.0 302 Found
+        <loc>https://app-facturito.tech/HTTP/1.0 302 Found
 Cache-Control: no-cache, private
-Date:          Mon, 22 Apr 2024 18:17:40 GMT
-Location:      http://facturacion.test
+Date:          Mon, 22 Apr 2024 18:53:02 GMT
+Location:      https://app-facturito.tech
 
 &lt;!DOCTYPE html&gt;
 &lt;html&gt;
     &lt;head&gt;
         &lt;meta charset=&quot;UTF-8&quot; /&gt;
-        &lt;meta http-equiv=&quot;refresh&quot; content=&quot;0;url=&#039;http://facturacion.test&#039;&quot; /&gt;
+        &lt;meta http-equiv=&quot;refresh&quot; content=&quot;0;url=&#039;https://app-facturito.tech&#039;&quot; /&gt;
 
-        &lt;title&gt;Redirecting to http://facturacion.test&lt;/title&gt;
+        &lt;title&gt;Redirecting to https://app-facturito.tech&lt;/title&gt;
     &lt;/head&gt;
     &lt;body&gt;
-        Redirecting to &lt;a href=&quot;http://facturacion.test&quot;&gt;http://facturacion.test&lt;/a&gt;.
+        Redirecting to &lt;a href=&quot;https://app-facturito.tech&quot;&gt;https://app-facturito.tech&lt;/a&gt;.
     &lt;/body&gt;
 &lt;/html&gt;</loc>
             <changefreq>daily</changefreq>
         <priority>0.8</priority>
             </url>
     <url>
-        <loc>http://facturacion.test/HTTP/1.0 302 Found
+        <loc>https://app-facturito.tech/HTTP/1.0 302 Found
 Cache-Control: no-cache, private
-Date:          Mon, 22 Apr 2024 18:17:40 GMT
-Location:      http://facturacion.test/login
+Date:          Mon, 22 Apr 2024 18:53:02 GMT
+Location:      https://app-facturito.tech/login
 
 &lt;!DOCTYPE html&gt;
 &lt;html&gt;
     &lt;head&gt;
         &lt;meta charset=&quot;UTF-8&quot; /&gt;
-        &lt;meta http-equiv=&quot;refresh&quot; content=&quot;0;url=&#039;http://facturacion.test/login&#039;&quot; /&gt;
+        &lt;meta http-equiv=&quot;refresh&quot; content=&quot;0;url=&#039;https://app-facturito.tech/login&#039;&quot; /&gt;
 
-        &lt;title&gt;Redirecting to http://facturacion.test/login&lt;/title&gt;
+        &lt;title&gt;Redirecting to https://app-facturito.tech/login&lt;/title&gt;
     &lt;/head&gt;
     &lt;body&gt;
-        Redirecting to &lt;a href=&quot;http://facturacion.test/login&quot;&gt;http://facturacion.test/login&lt;/a&gt;.
+        Redirecting to &lt;a href=&quot;https://app-facturito.tech/login&quot;&gt;https://app-facturito.tech/login&lt;/a&gt;.
     &lt;/body&gt;
 &lt;/html&gt;</loc>
             <changefreq>daily</changefreq>
