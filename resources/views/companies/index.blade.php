@@ -7,14 +7,13 @@
     </x-slot>
 
     <x-container class="py-12 px-4">
-@if (auth()->user()->email == "perlaxd365@gmail.com")
-    
-<div class="flex justify-end mb-8">
-    <x-wire-button dark href="{{route('companies.create')}}">
-        Agregar empresa
-    </x-wire-button>
-</div>
-@endif
+        @if (auth()->user()->email == 'perlaxd365@gmail.com')
+            <div class="flex justify-end mb-8">
+                <x-wire-button dark href="{{ route('companies.create') }}">
+                    Agregar empresa
+                </x-wire-button>
+            </div>
+        @endif
 
         @livewire('companies.company-table')
 

@@ -1,7 +1,9 @@
 <!-- end contact section -->
-<div class="footer_bg">
+<div class="footer_bg hidden" style="display: none">
+   
+   
     <!-- info section -->
-    <section class="info_section layout_padding2-bottom">
+    <section class="info_section layout_padding2-bottom" >
         <div class="container">
             <h3 class="">
                 BigWing

@@ -25,156 +25,100 @@
 
 <style></style>
 
-<div class="hero_area">
-    <!-- header section strats -->
-    <header class="header_section">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-8">
-                    <div class="navbar navbar-expand-lg custom_nav-container ">
-                        <a class="navbar-brand" href="{{route('home')}}">
-                            <span>
-                                Facturito 
-                            </span>
-                        </a>
-                        <button class="navbar-toggler" type="button" data-toggle="collapse"
-                            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                            aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
-
-                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                            <div class="d-flex  flex-column flex-lg-row align-items-center">
-                                <nav>
-                                    <ul class="navbar-nav">
-                                        @foreach ($links as $link)
-                                        
-                                            <li class="nav-item {{$link['active'] ? 'active' : ''}}">
-                                                <a class="nav-link" href="{{$link['route']}}">
-                                                    {{$link['name']}} 
-                                                    @if ($link['active'])
-                                                        <span class="sr-only">(current)</span>
-                                                    @endif
-                                                </a>
-                                            </li>
-
-                                        @endforeach
-                                        
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="{{route('dashboard')}}">
-                                                <span class="badge bg-secondary py-2 px-3">
-                                                    Ingresar Al Sistema
-                                                </span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </nav>
-                                {{-- <form class="form-inline my-2 my-lg-0 ml-0 ml-lg-4 mb-3 mb-lg-0">
-                                    <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit"></button>
-                                </form> --}}
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
-    <!-- end header section -->
-
-    @if (request()->routeIs('home'))
-    
-        <!-- slider section -->
-        <section class=" slider_section ">
-            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-                <ol class="carousel-indicators">
-                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active">01</li>
-                    <li data-target="#carouselExampleIndicators" data-slide-to="1">02</li>
-                    <li data-target="#carouselExampleIndicators" data-slide-to="2">03</li>
-                </ol>
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-lg-5 col-md-6">
-                                    <div class="slider_detail-box">
-                                        <h1>
-                                            <b class="bold">
-                                             Facturación Electrónica
-                                            </b>
-                                         </h1>
-                                          <br>
-                                         <p>
-                                             Facturito te da todo lo que tu negocio necesita, en un solo lugar.
-                                         </p>
-                                         
-                                         <ul>
-                                             <li><i class="fa fa-check"></i> <b> Facturación Electrónica Verificados por SUNAT PERÚ</b> </li>
-                                             <li><i class="fa fa-check"></i>
-                                                <b> Lleva un control completo de tus boletas, facturas y guías de remisión.</b>
-                                             </li>
-                                         </ul>
-                                         
-                                        <div class="btn-box">
-                                            <button class="btn btn-warning rounded-pill btn-lg" data-toggle="modal" data-target="#exampleModal"> Solicitar</button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-7">
-                                    <div class="slider_img-box">
-                                        <img src="images/facturacion.png" alt="" />
-                                    </div>      
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-lg-5 col-md-6">
-                                    <div class="slider_detail-box option">
-                                        <h1>
-                                           <b class="bold">
-                                            El software para ópticas más avanzado
-                                           </b>
-                                        </h1>
-                                        <p>
-                                            Facturito te da todo lo que tu óptica necesita, en un solo lugar.
-                                        </p>
-                                        <ul>
-                                            <li><i class="fa fa-check"></i> <b>Gestiona tus ventas y gastos de manera eficáz</b></li>
-                                            <li><i class="fa fa-check"></i>
-                                               <b> Lleva un seguimiento completo de tus clientes y sus exámenes de optometría</b>
-                                            </li>
-                                        </ul>
-                                        
-                                        <div class="btn-box">
-                                            <button class="btn btn-warning rounded-pill btn-lg" data-toggle="modal" data-target="#exampleModal"> Solicitar</button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-7">
-                                    <div class="slider_img-box">
-                                        <img src="images/optica.png" width="800px" alt="" />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel_btn-container">
-                    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button"
-                        data-slide="prev">
-                        <span class="sr-only">Anterior</span>
-                    </a>
-                    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button"
-                        data-slide="next">
-                        <span class="sr-only">Siguiente</span>
-                    </a>
-                </div>
-            </div>
-        </section>
-        <!-- end slider section -->
-
-    @endif
-
-</div>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Встреча с директором</title><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,400&display=swap" em-class="em-font-Rubik-Regular"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,700&display=swap" em-class="em-font-Rubik-Bold"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,900&display=swap" em-class="em-font-Rubik-Black">
+	
+	
+	
+	<style type="text/css">
+		html {
+			-webkit-text-size-adjust: none;
+			-ms-text-size-adjust: none;
+		}
+	</style>
+	<style em="styles">
+.em-font-Rubik-Black,.em-font-Rubik-ExtraBold {
+    font-family: Rubik,sans-serif!important;
+}
+.em-font-Rubik-Black {
+    font-weight: 900!important;
+}
+.em-font-Rubik-Bold,.em-font-Rubik-Regular {
+    font-family: "Rubik",sans-serif!important;
+    font-weight: 700!important;
+}
+.em-font-Rubik-Regular {
+    font-weight: 400!important;
+}
+@media only screen and (max-device-width:660px),only screen and (max-width:660px) {
+    .em-narrow-table {
+        width: 100%!important;
+        max-width: 660px!important;
+        min-width: 300px!important;
+    }
+    .em-mob-wrap.em-mob-wrap-cancel,.noresp-em-mob-wrap.em-mob-wrap-cancel {
+        display: table-cell!important;
+    }
+    .em-mob-font_size-45px {
+        font-size: 45px!important;
+    }
+    .em-mob-font_size-20px {
+        font-size: 20px!important;
+    }
+    .em-mob-line_height-28px {
+        line-height: 28px!important;
+    }
+    .em-mob-font_size-14px {
+        font-size: 14px!important;
+    }
+    .em-mob-line_height-18px {
+        line-height: 18px!important;
+    }
+    .em-mob-padding_bottom-15 {
+        padding-bottom: 15px!important;
+    }
+    .em-mob-width-auto {
+        width: auto!important;
+    }
+    .em-mob-padding_top-20 {
+        padding-top: 20px!important;
+    }
+    .em-mob-padding_bottom-20 {
+        padding-bottom: 20px!important;
+    }
+    .em-mob-padding_top-10 {
+        padding-top: 10px!important;
+    }
+    .em-mob-padding_right-10 {
+        padding-right: 10px!important;
+    }
+    .em-mob-padding_bottom-10 {
+        padding-bottom: 10px!important;
+    }
+    .em-mob-padding_left-10 {
+        padding-left: 10px!important;
+    }
+    .em-mob-font_size-26px {
+        font-size: 26px!important;
+    }
+    .em-mob-line_height-32px {
+        line-height: 32px!important;
+    }
+    .em-mob-width-100perc {
+        width: 100%!important;
+        max-width: 100%!important;
+    }
+    .em-mob-wrap {
+        display: block!important;
+    }
+    .em-mob-padding_right-20 {
+        padding-right: 20px!important;
+    }
+    .em-mob-padding_left-20 {
+        padding-left: 20px!important;
+    }
+}
+</style>
+</head>
