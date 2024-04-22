@@ -224,6 +224,9 @@
         }
     </style>
     <!---------------- Java Scripts for Map  ----------------->
+    <script src="http://maps.google.com/maps/api/js?key=AIzaSyAYWHoI7YpznDze_nChj5PyRxEhh4fdI9Y&sensor=false"
+        type="text/javascript"></script>
+
 
 
     <body style="margin: 0px; padding: 0px;" class="col-md-12 bg-secondary">
